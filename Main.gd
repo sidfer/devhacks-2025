@@ -17,9 +17,10 @@ func spawn_time_pickup():
 	var pickup = time_pickup_scene.instance()
 	add_child(pickup)
 	pickup.connect("collected", self, "_on_TimePickup_collected")
+	# Spawn at a random X position ABOVE the screen
 	pickup.position = Vector2(
-		get_viewport_rect().size.x + 100,
-		rand_range(100, get_viewport_rect().size.y - 100)
+		rand_range(50, get_viewport_rect().size.x - 50),  # Random X
+		-100  # Start above the screen
 	)
 
 func _on_TimePickup_collected():
