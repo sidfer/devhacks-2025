@@ -1,9 +1,21 @@
-extends Area2D
+extends Node2D  # Use CharacterBody2D if you need physics
 
-var speed = 500  # Adjust speed as needed
+var speed = 200  # Adjust movement speed
 
 func _process(delta):
-	var input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	position.x += input * speed * delta
-	# Keep player within screen bounds
-	position.x = clamp(position.x, 50, get_viewport_rect().size.x - 50)
+	var direction = Vector2.ZERO  # Start with no movement
+
+	# Check input and set movement direction
+	if Input.is_action_pressed("move_left"):
+		direction.x = -1
+	if Input.is_action_pressed("move_right"):
+		direction.x = 1
+	if Input.is_action_pressed("move_up"):
+		direction.y = -1
+	if Input.is_action_pressed("move_down"):
+		direction.y = 1
+
+	# Normalize and apply movement
+	if direction != Vector2.ZERO:
+		direction = direction.normalized()  # Prevent faster diagonal movement
+		position += direction * speed * delta
