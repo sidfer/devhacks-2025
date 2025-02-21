@@ -10,13 +10,25 @@ config_version=4
 
 [application]
 
-config/name="devhacks2025"
-run/main_scene="res://Main.tscn"
+config/name="devhacks-2025"
+run/main_scene="res://Scenes/Rooms/BaseRoom.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global/Global.gd"
+GameManager="*res://Global/GameManager.gd"
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Doors"
+2d_physics/layer_3="Treasures"
+2d_physics/layer_4="Walls"
 
 [physics]
 
