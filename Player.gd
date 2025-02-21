@@ -1,4 +1,4 @@
-extends Node2D  # Use CharacterBody2D if you need physics
+extends KinematicBody2D
 
 var speed = 200  # Adjust movement speed
 
@@ -18,4 +18,4 @@ func _process(delta):
 	# Normalize and apply movement
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()  # Prevent faster diagonal movement
-		position += direction * speed * delta
+		move_and_slide(direction * speed)
