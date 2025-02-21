@@ -4,8 +4,9 @@ var time_remaining = 30.0
 var time_pickup_scene = preload("res://TimePickup.tscn")
 
 func _ready():
+	$Player.position = Vector2(get_viewport_rect().size.x / 2, get_viewport_rect().size.y - 100)
 	$SpawnTimer.start()
-
+	
 func _process(delta):
 	time_remaining -= delta
 	if time_remaining <= 0:
