@@ -1,6 +1,6 @@
 extends Area2D
 
-export(String) var direction = "up"
+export(String) var direction = "down"
 
 
 func _ready():
