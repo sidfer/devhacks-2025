@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cave themeb4.ogg-5b0fe53d1eb7805236fc9055e02ba403.oggstr"
+
+[deps]
+
+source_file="res://audio/cave themeb4.ogg"
+dest_files=[ "res://.import/cave themeb4.ogg-5b0fe53d1eb7805236fc9055e02ba403.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

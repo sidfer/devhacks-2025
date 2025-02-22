@@ -34,6 +34,13 @@ func reset_stats():
 	time_remaining = 60
 	score = 0
 	current_level = 1
+	
+
+func reset_timer():
+	time_remaining = 60  # Reset to initial value
+	timer.stop()  # Stop the existing timer
+	timer.start()  # Restart the timer
+	emit_signal("time_updated")  # Force UI update
 
 func check_level_progression():
 	if score >= current_level * 50:  # Example: 50 points per level
