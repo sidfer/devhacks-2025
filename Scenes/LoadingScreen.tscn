@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/loading_rect.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/LoadingScreen.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sprites/Character Sprite/Idle/right.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Character Sprite/Idle/up.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Character Sprite/Idle/Down.png" type="Texture" id=8]
+[ext_resource path="res://scenes/Player/gradient.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -25,7 +26,7 @@ outline_size = 3
 outline_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
 font_data = ExtResource( 4 )
 
-[node name="Control2" type="Control"]
+[node name="Control3" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
@@ -87,3 +88,10 @@ texture = ExtResource( 6 )
 [node name="Up" type="Sprite" parent="Down/Left/Right"]
 position = Vector2( -2.13333, -85.3333 )
 texture = ExtResource( 7 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 572, 295 )
+scale = Vector2( 3.43931, 3.3496 )
+texture = ExtResource( 9 )
+energy = 1.7
+mode = 3
