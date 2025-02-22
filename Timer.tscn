@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="Timer" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 423.0
+margin_top = 44.0
+margin_right = 527.0
+margin_bottom = 58.0
+text = "Time Left: 00:20"
+
+[node name="GameTimer" type="Timer" parent="Label"]

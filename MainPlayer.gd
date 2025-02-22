@@ -32,6 +32,8 @@ func _on_Hitbox_area_entered(area):
 	if area.is_in_group("slow_obstacles"):
 		slow_obstacle_count += 1
 		speed = slow_speed  # Apply slow speed
+	elif area.is_in_group("clock"):  # If colliding with a clock
+		area.queue_free()  # Remove the clock from the scene
 
 # Called when exiting a slow obstacle area
 func _on_Hitbox_area_exited(area):
