@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light_mask.png-a650380f1eac9c5a99e57c4849844887.stex"
+path="res://.import/galsses-removebg-preview.png-3b3445ec71fe0d33a2916f0fc2dc3809.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Player/light_mask.png"
-dest_files=[ "res://.import/light_mask.png-a650380f1eac9c5a99e57c4849844887.stex" ]
+source_file="res://assests/Collectibles Images/galsses-removebg-preview.png"
+dest_files=[ "res://.import/galsses-removebg-preview.png-3b3445ec71fe0d33a2916f0fc2dc3809.stex" ]
 
 [params]
 
