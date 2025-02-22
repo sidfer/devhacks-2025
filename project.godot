@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="devhacks-2025"
-run/main_scene="res://Scenes/Rooms/BaseRoom.tscn"
+run/main_scene="res://MainWorld.tscn"
 config/icon="res://icon.png"
 
 [autoload]
