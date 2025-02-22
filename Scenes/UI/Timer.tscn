@@ -11,6 +11,7 @@ use_mipmaps = true
 font_data = ExtResource( 2 )
 
 [node name="Timer" type="Label"]
+light_mask = 0
 margin_left = 66.0
 margin_top = 16.0
 margin_right = 227.0
