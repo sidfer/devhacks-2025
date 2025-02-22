@@ -57,11 +57,11 @@ extents = Vector2( 10.9048, 16 )
 [node name="Furniture" type="Node2D"]
 
 [node name="Wall" type="Sprite" parent="."]
-scale = Vector2( 0.773438, 0.697917 )
+scale = Vector2( 0.453608, 0.385417 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 64, 256, 128, 96 )
+region_rect = Rect2( 70.735, 256, 97.0473, 96 )
 __meta__ = {
 "_edit_group_": true
 }
