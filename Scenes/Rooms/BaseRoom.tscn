@@ -72,10 +72,23 @@ position = Vector2( 517, 61.5 )
 shape = SubResource( 5 )
 
 [node name="Treasure" parent="." instance=ExtResource( 3 )]
-position = Vector2( 528, 197 )
+position = Vector2( 563, 208 )
 collision_layer = 4
 
 [node name="PlayerSpawn" type="Position2D" parent="."]
+visible = false
 position = Vector2( 526, 479 )
+
+[node name="Spawn_Up" type="Position2D" parent="."]
+position = Vector2( 525, 121 )
+
+[node name="Spawn_Down" type="Position2D" parent="."]
+position = Vector2( 535, 459 )
+
+[node name="Spawn_Left" type="Position2D" parent="."]
+visible = false
+
+[node name="Spawn_Right" type="Position2D" parent="."]
+visible = false
 
 [connection signal="body_entered" from="Door_Up" to="Door_Up" method="_on_Door_Up_body_entered"]

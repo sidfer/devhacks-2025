@@ -8,36 +8,58 @@ func _ready():
 	# Load the starting room
 	load_room(Vector2(0, 0))
 
-func load_room(grid_position: Vector2):  
+func load_room(grid_position: Vector2, from_direction: String=""):  
+	print("Loading room at grid position: ", grid_position, " from direction: ", from_direction)
+	
 	# Freeze the global player  
 	var player = get_tree().get_nodes_in_group("player")  
+	print("Player nodes found: ", player.size())
+	
 	if player.size() > 0:  
 		player[0].can_move = false  
-
+		print("Player frozen: ", player[0].name)
+	
 	# Remove the old room from RoomContainer  
 	if GameManager.current_room:  
+		print("Freeing old room: ", GameManager.current_room.name)
 		GameManager.current_room.queue_free()  
 
 	# Load/generate the new room  
 	if not GameManager.rooms.has(grid_position):  
+		print("Generating new room at: ", grid_position)
 		GameManager.generate_room(grid_position)  
 
 	# Instance the new room and add it to RoomContainer  
 	var room_instance = GameManager.rooms[grid_position].instance()  
+	print("Instanced room: ", room_instance.name)
 	get_node("/root/MainWorld/RoomContainer").add_child(room_instance)  
 	GameManager.current_room = room_instance  
 
 	# Reposition the player after a small delay  
 	yield(get_tree().create_timer(0.1), "timeout")  
-	if player.size() > 0:  
-		var p = player[0]  
-		p.can_move = true  
-		var spawn = GameManager.current_room.get_node_or_null("PlayerSpawn")  
-		if spawn:  
-			p.global_position = spawn.global_position  
-		else:  
-			push_error("Missing PlayerSpawn in room")  
-			
+	if player.size() > 0:
+		var p = player[0]
+		p.can_move = true
+		print("Player unfrozen: ", p.name)
+		
+		# Use direction-specific spawn point
+		var spawn_name = "Spawn_" + from_direction.capitalize() if from_direction != "" else "PlayerSpawn"
+ # Use direction-specific spawn point
+
+
+	# Special case for vertical directions:
+		if from_direction == "up":
+			spawn_name = "Spawn_Down"  # Entering from "up" → spawn at "Spawn_Down"
+		elif from_direction == "down":
+			spawn_name = "Spawn_Up"    # Entering from "down" → spawn at "Spawn_Up"
+		print("Looking for spawn point: ", spawn_name)
+		
+		var spawn = current_room.get_node_or_null(spawn_name)
+		if spawn:
+			print("Found spawn point at: ", spawn.global_position)
+			p.global_position = spawn.global_position
+		else:
+			push_error("Missing spawn: " + spawn_name)
 func generate_room(grid_position: Vector2):
 	var room_scene_path: String
 	match grid_position:
@@ -64,6 +86,8 @@ func generate_room(grid_position: Vector2):
 	rooms[grid_position] = room_scene
 
 func change_room(direction: String):
+	print("Changing room in direction: ", direction)
+	
 	var offset = Vector2.ZERO
 	match direction:
 		"up": offset.y -= 1
@@ -72,6 +96,7 @@ func change_room(direction: String):
 		"right": offset.x += 1
 
 	var new_grid = room_grid + offset
+	print("New grid position: ", new_grid)
 
 	# Define allowed grid positions
 	var allowed_positions = [
@@ -83,8 +108,8 @@ func change_room(direction: String):
 	]
 
 	if new_grid in allowed_positions:
+		print("New grid position is valid")
 		room_grid = new_grid
-		load_room(room_grid)
+		load_room(room_grid, direction)
 	else:
-		# Optional: Play error sound or show feedback
-		print("Movement blocked")
+		print("Movement blocked: Invalid grid position")
