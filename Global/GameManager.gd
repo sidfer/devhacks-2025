@@ -7,6 +7,26 @@ var current_room : Node
 var room_grid = Vector2(0, 0)  # Track player's grid position
 var rooms = {}  # Stores generated rooms
 
+var collected_items = {}  # Dictionary to track collected items
+var TOTAL_ITEMS = 5;
+
+func mark_item_collected(item_id):
+	collected_items[item_id] = true  # Mark this item as collected
+	check_win_condition()
+
+func is_item_collected(item_id):
+	return collected_items.get(item_id, false)  # Return true if collected
+
+func check_win_condition():
+	if collected_items.size() >= TOTAL_ITEMS:
+		win_game();
+
+func win_game():
+	print("Congratulations! You won!")
+	get_tree().change_scene("res://WonGame.tscn")
+	emit_signal("game_won")  # Notify UI or trigger a win screen
+
+
 #func _ready():
 #	# Load the starting room
 #	load_room(Vector2(0, 0))

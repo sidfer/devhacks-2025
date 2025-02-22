@@ -2,7 +2,7 @@ extends Node
 
 signal time_updated(time)  # Signal to notify when time changes
 
-var time_remaining = 5.0
+var time_remaining = 100.0
 var timer = null
 var started = false;
 

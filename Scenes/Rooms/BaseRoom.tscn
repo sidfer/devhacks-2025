@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://newWall.tres" type="TileSet" id=1]
 [ext_resource path="res://Global/Door_Up.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://WallTileSet.tres" type="TileSet" id=6]
 [ext_resource path="res://scenes/Rooms/Door_Right.gd" type="Script" id=7]
 [ext_resource path="res://Global/Door_Down.gd" type="Script" id=8]
+[ext_resource path="res://scenes/Rooms/PocketWatch.gd" type="Script" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 14.5, 15.5 )
@@ -42,7 +44,7 @@ position = Vector2( 526, 479 )
 position = Vector2( 518, 110 )
 
 [node name="Spawn_Down" type="Position2D" parent="."]
-position = Vector2( 517, 463 )
+position = Vector2( 521, 467 )
 
 [node name="Spawn_Left" type="Position2D" parent="."]
 position = Vector2( 903, 259 )
@@ -130,6 +132,16 @@ script = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Left"]
 position = Vector2( 92, 279 )
 shape = SubResource( 10 )
+
+[node name="PocketWatch" type="Area2D" parent="."]
+position = Vector2( 925, 127 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PocketWatch"]
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="PocketWatch"]
+texture = ExtResource( 10 )
 
 [connection signal="body_entered" from="Door_Up" to="." method="_on_Door_Up_body_entered"]
 [connection signal="body_entered" from="Door_Down" to="." method="_on_Door_Down_body_entered"]

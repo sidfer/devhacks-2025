@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://WallTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Rooms/Door_Down.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Global/BaseRoom.gd" type="Script" id=4]
 [ext_resource path="res://newWall.tres" type="TileSet" id=5]
+[ext_resource path="res://scenes/Rooms/Clockwork gear.gd" type="Script" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 9.50001, 40.5 )
@@ -29,6 +31,9 @@ extents = Vector2( 17.25, 17.5 )
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 15, 11.75 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 14.5, 15.5 )
 
 [node name="UpRoom" type="Node2D"]
 script = ExtResource( 4 )
@@ -113,5 +118,18 @@ shape = SubResource( 12 )
 
 [node name="Spawn_Down" type="Position2D" parent="."]
 position = Vector2( 500, 455 )
+
+[node name="Clockwork gear" type="Area2D" parent="."]
+position = Vector2( 765, 117 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clockwork gear"]
+modulate = Color( 0.870588, 0.0627451, 0.0627451, 1 )
+self_modulate = Color( 0.886275, 0.0352941, 0.0352941, 1 )
+position = Vector2( 1, 0 )
+shape = SubResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="Clockwork gear/CollisionShape2D"]
+texture = ExtResource( 7 )
 
 [connection signal="body_entered" from="Map1/Door_Down" to="Map1/Door_Down" method="_on_Door_Up_body_entered"]
