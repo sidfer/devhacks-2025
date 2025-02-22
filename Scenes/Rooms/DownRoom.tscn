@@ -35,7 +35,7 @@ position = Vector2( 528, 197 )
 collision_layer = 4
 
 [node name="Spawn_Up" type="Position2D" parent="."]
-position = Vector2( 508, 100 )
+position = Vector2( 507, 103 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -95,7 +95,7 @@ collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Up"]
-position = Vector2( 502, 86 )
+position = Vector2( 500, 99 )
 shape = SubResource( 5 )
 
 [connection signal="body_entered" from="Door_Up" to="." method="_on_Door_Up_body_entered"]

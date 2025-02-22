@@ -2,8 +2,9 @@ extends Node
 
 signal time_updated(time)  # Signal to notify when time changes
 
-var time_remaining = 1000.0
+var time_remaining = 5.0
 var timer = null
+var started = false;
 
 func _ready():
 	if timer == null:  # Ensure only one timer exists
@@ -13,8 +14,11 @@ func _ready():
 		timer.autostart = true
 		timer.one_shot = false
 		timer.connect("timeout", self, "_on_Timer_timeout")
-		timer.start()
+			
 
+func start_timer():
+	timer.start();
+	
 func _on_Timer_timeout():
 	time_remaining -= 1
 	emit_signal("time_updated", time_remaining)  # Notify UI
