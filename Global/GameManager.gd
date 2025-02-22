@@ -36,11 +36,11 @@ func load_room(grid_position: Vector2, from_direction: String=""):
 	GameManager.current_room = room_instance  
 
 	# Reposition the player after a small delay  
-	yield(get_tree().create_timer(0.3), "timeout")  
+	# yield(get_tree().create_timer(0.3), "timeout")  
 	if player.size() > 0:
 		var p = player[0]
 		p.can_move = true
-		yield(get_tree().create_timer(0.3), "timeout")
+		# yield(get_tree().create_timer(0.3), "timeout")
 		print("Player unfrozen: ", p.name)
 		
 		# Use direction-specific spawn point

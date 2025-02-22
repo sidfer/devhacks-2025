@@ -64,6 +64,7 @@ position = Vector2( 463, 321 )
 shape = SubResource( 4 )
 
 [node name="Door_Up" type="Area2D" parent="."]
+position = Vector2( 5, -11 )
 collision_layer = 2
 script = ExtResource( 2 )
 
@@ -80,6 +81,6 @@ visible = false
 position = Vector2( 480, 318 )
 
 [node name="Spawn_Up" type="Position2D" parent="."]
-position = Vector2( 518, 121 )
+position = Vector2( 522, 99 )
 
-[connection signal="body_entered" from="Door_Up" to="Door_Up" method="_on_Door_Up_body_entered"]
+[connection signal="body_entered" from="Door_Up" to="." method="_on_Door_Up_body_entered"]
