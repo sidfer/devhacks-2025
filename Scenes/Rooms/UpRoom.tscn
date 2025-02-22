@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://WallTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Global/Door_Down.gd" type="Script" id=2]
@@ -8,6 +8,27 @@
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 28.625, 12 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 17, 14 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 14.5, 13 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 14.5, 11.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 17.25, 12.25 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 15.5, 12 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 17.25, 17.5 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 15, 11.75 )
 
 [node name="UpRoom" type="Node2D"]
 script = ExtResource( 4 )
@@ -67,5 +88,35 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map1/Door_Down"]
 position = Vector2( 529.375, 513 )
 shape = SubResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="Map1" groups=["slow_obstacles"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 194, 166 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 496.5, 105 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 404.5, 285.5 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 704.25, 195.75 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 194.5, 376 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 524, 433 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 796, 436.75 )
+shape = SubResource( 12 )
 
 [connection signal="body_entered" from="Map1/Door_Down" to="Map1/Door_Down" method="_on_Door_Up_body_entered"]

@@ -13,6 +13,7 @@ var rooms = {}  # Stores generated rooms
 
 # In GameManager.gd
 func reset():
+	var time = get_tree().get_nodes_in_group("timer")
 	current_room = null
 	room_grid = Vector2(0, 0)
 	rooms = {}
