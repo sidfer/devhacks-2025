@@ -29,3 +29,5 @@ func add_time(seconds: int):
 
 func game_over():
 	print("Game Over!")  # Replace with your game-over logic
+	get_tree().change_scene("res://GameOver.tscn")  # Switch to game-over screen
+
