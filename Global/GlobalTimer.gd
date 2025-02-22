@@ -2,7 +2,7 @@ extends Node
 
 signal time_updated(time)  # Signal to notify when time changes
 
-var time_remaining = 100.0
+var time_remaining = 60.0
 var timer = null
 var started = false;
 
@@ -36,7 +36,7 @@ func game_over():
 	get_tree().change_scene("res://GameOver.tscn")  # Switch to game-over screen
 	
 func reset():
-	time_remaining = 10.0
+	time_remaining = 60.0
 	emit_signal("time_updated", time_remaining)  # Notify UI of reset time
 	print("Time reset to: ", time_remaining)
 	
