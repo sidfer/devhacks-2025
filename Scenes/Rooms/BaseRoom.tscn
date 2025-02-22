@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://newWall.tres" type="TileSet" id=1]
 [ext_resource path="res://Global/Door_Up.gd" type="Script" id=2]
@@ -8,6 +8,15 @@
 [ext_resource path="res://WallTileSet.tres" type="TileSet" id=6]
 [ext_resource path="res://Global/Door_Right.gd" type="Script" id=7]
 [ext_resource path="res://Global/Door_Down.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 14.5, 15.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 12.5, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 11.5, 13 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 28.4375, 25.0625 )
@@ -60,6 +69,20 @@ tile_set = ExtResource( 6 )
 cell_size = Vector2( 30, 30 )
 format = 1
 tile_data = PoolIntArray( 786456, 1610612751, 0, 786458, 1610612751, 0, 786460, 1610612751, 0, 917528, 1610612751, 0, 917530, 1610612751, 0, 917532, 1610612751, 0, 1048602, 1610612743, 0, 1114138, 1610612744, 0, 1179674, 1610612744, 0 )
+
+[node name="Area2D" type="Area2D" parent="TileMap" groups=["slow_obstacles"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2( 287.5, 405.5 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2( 524.5, 406.5 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2( 885.5, 285 )
+shape = SubResource( 8 )
 
 [node name="Door_Up" type="Area2D" parent="."]
 position = Vector2( -2, -60 )
