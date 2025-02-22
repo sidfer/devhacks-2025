@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Sprites/house_inside.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/interior.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 48 )
@@ -12,7 +13,7 @@ extents = Vector2( 31.5, 41.5 )
 extents = Vector2( 23.5, 39.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 24, 33 )
+extents = Vector2( 24, 39.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 31.4921, 34.5 )
@@ -56,6 +57,7 @@ extents = Vector2( 10.9048, 16 )
 [node name="Furniture" type="Node2D"]
 
 [node name="Wall" type="Sprite" parent="."]
+scale = Vector2( 0.773438, 0.697917 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -74,7 +76,8 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="BigBed" type="Sprite" parent="."]
-position = Vector2( 206, 1 )
+position = Vector2( 127, 1 )
+scale = Vector2( 0.822581, 0.792683 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -93,7 +96,8 @@ position = Vector2( 0.5, -1.5 )
 shape = SubResource( 2 )
 
 [node name="SmallBed" type="Sprite" parent="."]
-position = Vector2( 313, 0 )
+position = Vector2( 197, 1 )
+scale = Vector2( 0.765957, 0.822785 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -112,7 +116,8 @@ position = Vector2( -0.5, 1.5 )
 shape = SubResource( 3 )
 
 [node name="Table" type="Sprite" parent="."]
-position = Vector2( 392, 0 )
+position = Vector2( 270, 0 )
+scale = Vector2( 0.723404, 0.759494 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -122,15 +127,16 @@ __meta__ = {
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Table"]
+visible = false
 position = Vector2( 25, 41 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/StaticBody2D"]
-position = Vector2( -1, -8 )
+position = Vector2( -1, -1.5 )
 shape = SubResource( 4 )
 
 [node name="Shelves" type="Sprite" parent="."]
-position = Vector2( 0, 121 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 329, 0 )
+scale = Vector2( 0.936508, 0.811594 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -149,8 +155,8 @@ position = Vector2( 0.984127, -0.5 )
 shape = SubResource( 5 )
 
 [node name="Shelf2" type="Sprite" parent="."]
-position = Vector2( 89, 121 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 405, 2 )
+scale = Vector2( 0.876923, 0.826087 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -169,8 +175,8 @@ position = Vector2( 0.984085, 1.5 )
 shape = SubResource( 6 )
 
 [node name="Door" type="Sprite" parent="."]
-position = Vector2( 183, 121 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 3, 77 )
+scale = Vector2( 1.11613, 1.08333 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -189,8 +195,8 @@ position = Vector2( -0.491959, 0 )
 shape = SubResource( 7 )
 
 [node name="Fireplace" type="Sprite" parent="."]
-position = Vector2( 274, 130 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 151, 111 )
+scale = Vector2( 0.727273, 0.688889 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -208,8 +214,8 @@ position = Vector2( -0.984131, 1.5 )
 shape = SubResource( 8 )
 
 [node name="FireplaceConnection" type="Sprite" parent="."]
-position = Vector2( 332, 129 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 187, 79 )
+scale = Vector2( 0.733333, 0.848485 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -227,8 +233,8 @@ position = Vector2( 0.984131, 11.5 )
 shape = SubResource( 9 )
 
 [node name="Cupboard" type="Sprite" parent="."]
-position = Vector2( 389, 125 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 475, 1 )
+scale = Vector2( 0.878788, 0.842857 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -246,8 +252,8 @@ position = Vector2( 1.47623, 1.5 )
 shape = SubResource( 10 )
 
 [node name="Cupboard2" type="Sprite" parent="."]
-position = Vector2( 1, 212 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 550, 4 )
+scale = Vector2( 0.859375, 0.811594 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -265,7 +271,7 @@ position = Vector2( -0.492046, 0.5 )
 shape = SubResource( 11 )
 
 [node name="Desk" type="Sprite" parent="."]
-position = Vector2( 90, 212 )
+position = Vector2( 310, 82 )
 scale = Vector2( 1.01613, 1 )
 texture = ExtResource( 1 )
 centered = false
@@ -284,8 +290,8 @@ position = Vector2( 1.47618, 2 )
 shape = SubResource( 12 )
 
 [node name="DeskVertical" type="Sprite" parent="."]
-position = Vector2( 173, 212 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 68, 81 )
+scale = Vector2( 0.849056, 0.684783 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -303,52 +309,9 @@ visible = false
 position = Vector2( -4.42857, 11.5 )
 shape = SubResource( 13 )
 
-[node name="Floor" type="Sprite" parent="."]
-position = Vector2( 249, 208 )
-scale = Vector2( 0.595238, 0.687075 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 6.00513, 12.1696, 84.7823, 147.327 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="FloorIn" type="Sprite" parent="Floor"]
-position = Vector2( 25.2001, 18.9208 )
-scale = Vector2( 1.08387, 1.3099 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 32.0414, 21.1326, 31.5763, 10.3276 )
-
-[node name="FloorIn2" type="Sprite" parent="Floor"]
-position = Vector2( 25.2001, 82.9604 )
-scale = Vector2( 1.08387, 1.3099 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 32.0414, 21.1326, 31.5763, 10.3276 )
-
-[node name="FloorIn3" type="Sprite" parent="Floor"]
-position = Vector2( 52.0801, 50.9406 )
-scale = Vector2( 0.480001, 0.967444 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 43.9473, 61.8868, 14.0424, 34.3959 )
-
-[node name="FloorIn4" type="Sprite" parent="Floor"]
-position = Vector2( 25.2001, 114.98 )
-scale = Vector2( 0.619998, 1.39217 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 18.7777, 126.669, 12.785, 23.0517 )
-
 [node name="Chair" type="Sprite" parent="."]
-position = Vector2( 333, 209 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 430, 98 )
+scale = Vector2( 0.73077, 0.783784 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -367,8 +330,8 @@ position = Vector2( 3.05176e-05, 4.5 )
 shape = SubResource( 14 )
 
 [node name="ChairFacingUp" type="Sprite" parent="."]
-position = Vector2( 365, 209 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 458, 101 )
+scale = Vector2( 0.740741, 0.964286 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -387,8 +350,8 @@ position = Vector2( 0, 3.5 )
 shape = SubResource( 15 )
 
 [node name="ChairFacingRight" type="Sprite" parent="."]
-position = Vector2( 336, 254 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 431, 135 )
+scale = Vector2( 0.818182, 0.84375 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -407,8 +370,8 @@ position = Vector2( -0.904785, -1 )
 shape = SubResource( 16 )
 
 [node name="ChairFacingLeft" type="Sprite" parent="."]
-position = Vector2( 370, 254 )
-scale = Vector2( 1.01613, 1 )
+position = Vector2( 461, 135 )
+scale = Vector2( 0.869565, 0.818182 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
@@ -425,3 +388,51 @@ position = Vector2( 10.8254, 13 )
 visible = false
 position = Vector2( 0.904663, 5 )
 shape = SubResource( 17 )
+
+[node name="FloorWood" type="Sprite" parent="."]
+position = Vector2( 223, 102 )
+scale = Vector2( 0.787879, 0.806452 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( -1.03941, 96.1113, 33.2867, 31.9148 )
+
+[node name="FloorGreen" type="Sprite" parent="."]
+position = Vector2( 185, 151 )
+scale = Vector2( 0.774194, 0.774194 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 31.8498, 128.098, 31.1451, 31.7767 )
+
+[node name="FloorWoodCrack" type="Sprite" parent="."]
+position = Vector2( 260, 102 )
+scale = Vector2( 0.8125, 0.78125 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 31.0329, 96.1113, 32.7566, 32.2458 )
+
+[node name="FloorGreenDirt" type="Sprite" parent="."]
+position = Vector2( 152, 151 )
+scale = Vector2( 0.741935, 0.71875 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32.1997, 159.844, 31.4325, 32.3885 )
+
+[node name="FloorTile" type="Sprite" parent="."]
+position = Vector2( 264, 152 )
+scale = Vector2( 0.833334, 0.766667 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0.707443, 128.717, 30.1665, 30.6035 )
+
+[node name="FloorTileDirt" type="Sprite" parent="."]
+position = Vector2( 227, 151 )
+scale = Vector2( 0.833333, 0.766667 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0.521138, 160.761, 30.7575, 30.7548 )
