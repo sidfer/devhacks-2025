@@ -11,8 +11,6 @@ var can_move = true  # Movement control flag
 func _ready():
 	add_to_group("player")
 
-func update_speed(multiplier):
-	current_speed = SPEED * multiplier
 
 func _physics_process(delta):
 	if !can_move:
