@@ -5,6 +5,8 @@ var slow_obstacle_scene = preload("res://Slow.tscn")
 
 var clock_scene = preload("res://clock.tscn")
 
+var time_scene = preload("res://Scenes/UI/Timer.tscn")
+
 func _ready():
  
  # Spawn obstacles at random positions
@@ -17,6 +19,9 @@ func _ready():
 
 	for i in range(3):  # Adjust the number of obstacles
 		spawn_clock()
+		
+	for i in range(1):  # Adjust the number of obstacles
+		spawn_timer()
 
 
 func spawn_obstacle():
@@ -61,4 +66,8 @@ func spawn_clock():
 		rand_range(50, screen_width - 50),  # Random X, avoiding edges
 		rand_range(50, screen_height - 50)  # Random Y, avoiding the bottom area
 	)
+	
+func spawn_timer():
+	var timerC = time_scene.instance()  # Create an instance of the obstacle
+	add_child(timerC)  # Add it to the scene
 	
