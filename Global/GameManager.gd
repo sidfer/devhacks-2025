@@ -30,9 +30,6 @@ func _ready():
 #	loading_screen.queue_free()
 #	# Continue running the game logic (e.g., loading the first room)
 #	print("Play button pressed. Starting the game.")
-#
-#	# Load the starting room after the loading screen is hidden
-#	load_room(Vector2(0, 0))
 	
 
 func load_room(grid_position: Vector2, from_direction: String=""):  
