@@ -1,7 +1,7 @@
 extends Node2D
 
 var time_remaining = 30.0
-var time_pickup_scene = preload("res://TimePickup.tscn")
+var time_pickup_scene = preload("res://Clock.tscn") #Time pick up scene
 
 var obstacle_scene = preload("res://Obstacle.tscn")
 var slow_obstacle_scene = preload("res://Slow.tscn")
@@ -21,6 +21,9 @@ func _ready():
 	 # Spawn slow obstacles at random positions
 	for i in range(3):  # Adjust the number of obstacles
 		spawn_slow_obstacle()
+		
+	for i in range(5):  # Adjust the number of obstacles
+		spawn_time_pickup()
 
 func spawn_obstacle():
 	var obstacle = obstacle_scene.instance()  # Create an instance of the obstacle
