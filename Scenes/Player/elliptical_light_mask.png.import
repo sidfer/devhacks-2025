@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/elliptical_light_mask.png-97f298033ba4369b29e26af2267143f5.stex"
+path="res://.import/elliptical_light_mask.png-bdc93d2489918425bcaa83b595fa0b2d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Player/elliptical_light_mask.png"
-dest_files=[ "res://.import/elliptical_light_mask.png-97f298033ba4369b29e26af2267143f5.stex" ]
+source_file="res://Scenes/Player/elliptical_light_mask.png"
+dest_files=[ "res://.import/elliptical_light_mask.png-bdc93d2489918425bcaa83b595fa0b2d.stex" ]
 
 [params]
 
