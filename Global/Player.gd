@@ -10,6 +10,10 @@ var can_move = true  # Movement control flag
 
 func _ready():
 	add_to_group("player")
+	
+	$Hitbox.connect("area_entered", self, "_on_Hitbox_area_entered")
+	$Hitbox.connect("area_exited", self, "_on_Hitbox_area_exited")
+
 
 
 func _physics_process(delta):
@@ -19,7 +23,7 @@ func _physics_process(delta):
 	velocity = Vector2()
 	velocity.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	velocity.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	velocity = velocity.normalized() * NORMAL_SPEED
+	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
 
 
