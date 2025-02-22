@@ -1,10 +1,28 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://WallTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Global/Door_Up.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Global/BaseRoom.gd" type="Script" id=4]
 [ext_resource path="res://newWall.tres" type="TileSet" id=5]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 15, 13 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 13.5, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 17, 17 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 13.5, 15.5 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 13.5, 14 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 14.5, 12 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 25.5, 12.5 )
@@ -48,6 +66,32 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 5, 5 )
 format = 1
 tile_data = PoolIntArray( 131138, 6, 0, 131144, 536870918, 0, 2490433, 11, 0 )
+
+[node name="Area2D" type="Area2D" parent="TileMap" groups=["slow_obstacles"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2( 165, 494 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2( 222.5, 257.5 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2( 617, 134 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2( 405.5, 465.5 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2( 796.5, 223 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2( 736.5, 405 )
+shape = SubResource( 11 )
 
 [node name="Door_Up" type="Area2D" parent="."]
 position = Vector2( 5, -11 )
