@@ -12,6 +12,7 @@ func _ready():
 	for i in range(1):  # Adjust the number of obstacles
 		spawn_time()
 
+
 func spawn_clock():
 	var clocks = clock_scene.instance()  # Create an instance of the obstacle
 	clocks.add_to_group("clock")  # Add to group
