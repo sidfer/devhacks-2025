@@ -1,12 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://newWall.tres" type="TileSet" id=1]
 [ext_resource path="res://Global/Door_Up.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Global/BaseRoom.gd" type="Script" id=4]
-[ext_resource path="res://Global/Door_Left.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Rooms/Door_Left.gd" type="Script" id=5]
 [ext_resource path="res://WallTileSet.tres" type="TileSet" id=6]
-[ext_resource path="res://Global/Door_Right.gd" type="Script" id=7]
+[ext_resource path="res://scenes/Rooms/Door_Right.gd" type="Script" id=7]
 [ext_resource path="res://Global/Door_Down.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -19,13 +19,19 @@ extents = Vector2( 12.5, 14.5 )
 extents = Vector2( 11.5, 13 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 28.4375, 25.0625 )
+extents = Vector2( 32.2188, 5.43359 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 5.5, 20 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 7.5, 35 )
 
 [node name="BaseRoom" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Treasure" parent="." instance=ExtResource( 3 )]
-position = Vector2( 563, 208 )
+position = Vector2( 559, 190 )
 collision_layer = 4
 
 [node name="PlayerSpawn" type="Position2D" parent="."]
@@ -33,16 +39,16 @@ visible = false
 position = Vector2( 526, 479 )
 
 [node name="Spawn_Up" type="Position2D" parent="."]
-position = Vector2( 516, 62 )
+position = Vector2( 518, 110 )
 
 [node name="Spawn_Down" type="Position2D" parent="."]
-position = Vector2( 531, 530 )
+position = Vector2( 517, 463 )
 
 [node name="Spawn_Left" type="Position2D" parent="."]
-position = Vector2( 916, 267 )
+position = Vector2( 903, 259 )
 
 [node name="Spawn_Right" type="Position2D" parent="."]
-position = Vector2( 103, 264 )
+position = Vector2( 152, 277 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )
@@ -85,42 +91,45 @@ position = Vector2( 885.5, 285 )
 shape = SubResource( 8 )
 
 [node name="Door_Up" type="Area2D" parent="."]
-position = Vector2( -2, -60 )
+position = Vector2( 519, 93 )
 collision_layer = 2
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Up"]
-position = Vector2( 523, 127 )
-shape = SubResource( 5 )
-
-[node name="Door_Right" type="Area2D" parent="."]
-position = Vector2( 76, 54 )
-collision_layer = 2
-script = ExtResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Right"]
-position = Vector2( 887, 219 )
-shape = SubResource( 5 )
-
-[node name="Door_Left" type="Area2D" parent="."]
-position = Vector2( -864, 75 )
-collision_layer = 2
-script = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Left"]
-position = Vector2( 925, 203 )
+position = Vector2( -1, 0 )
 shape = SubResource( 5 )
 
 [node name="Door_Down" type="Area2D" parent="."]
-position = Vector2( -399, 380 )
+position = Vector2( 522, 505 )
 collision_layer = 2
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Down"]
-position = Vector2( 919, 153 )
+position = Vector2( -2, -2 )
 shape = SubResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Door_Right" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Right"]
+position = Vector2( 930, 274 )
+shape = SubResource( 9 )
+
+[node name="Door_Left" type="Area2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Left"]
+position = Vector2( 92, 279 )
+shape = SubResource( 10 )
 
 [connection signal="body_entered" from="Door_Up" to="." method="_on_Door_Up_body_entered"]
-[connection signal="body_entered" from="Door_Right" to="Door_Right" method="_on_Door_Up_body_entered"]
-[connection signal="body_entered" from="Door_Left" to="Door_Left" method="_on_Door_Up_body_entered"]
 [connection signal="body_entered" from="Door_Down" to="." method="_on_Door_Down_body_entered"]

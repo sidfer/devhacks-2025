@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://WallTileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://Global/Door_Down.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Rooms/Door_Down.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Global/BaseRoom.gd" type="Script" id=4]
 [ext_resource path="res://newWall.tres" type="TileSet" id=5]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 28.625, 12 )
+extents = Vector2( 36, 5.75 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 17, 14 )
@@ -36,12 +36,6 @@ script = ExtResource( 4 )
 [node name="Treasure2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 528, 197 )
 collision_layer = 4
-
-[node name="PlayerSpawn" type="Position2D" parent="."]
-position = Vector2( 526, 479 )
-
-[node name="Spawn_Down" type="Position2D" parent="."]
-position = Vector2( 515, 461 )
 
 [node name="Map1" type="TileMap" parent="."]
 z_index = -1
@@ -78,15 +72,12 @@ format = 1
 tile_data = PoolIntArray( 65547, 1073741830, 0, 65548, 1610612742, 0 )
 
 [node name="Door_Down" type="Area2D" parent="Map1"]
-position = Vector2( -28, 12 )
+position = Vector2( -173, 245 )
 collision_layer = 2
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map1/Door_Down"]
-position = Vector2( 529.375, 513 )
+position = Vector2( 676, 262 )
 shape = SubResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="Map1" groups=["slow_obstacles"]]
@@ -118,5 +109,8 @@ shape = SubResource( 11 )
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Map1/Area2D"]
 position = Vector2( 796, 436.75 )
 shape = SubResource( 12 )
+
+[node name="Spawn_Down" type="Position2D" parent="."]
+position = Vector2( 502, 474 )
 
 [connection signal="body_entered" from="Map1/Door_Down" to="Map1/Door_Down" method="_on_Door_Up_body_entered"]

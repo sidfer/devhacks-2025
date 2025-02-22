@@ -2,7 +2,7 @@ extends Node
 
 signal time_updated(time)  # Signal to notify when time changes
 
-var time_remaining = 10.0
+var time_remaining = 1000.0
 var timer = null
 
 func _ready():
