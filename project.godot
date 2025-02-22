@@ -11,13 +11,14 @@ config_version=4
 [application]
 
 config/name="devhacks-2025"
-run/main_scene="res://MainWorld.tscn"
+run/main_scene="res://Scenes/LoadingScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://Global/Global.gd"
 GameManager="*res://Global/GameManager.gd"
+GlobalTimer="*res://Global/GlobalTimer.gd"
 
 [gui]
 
