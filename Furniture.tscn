@@ -436,3 +436,13 @@ texture = ExtResource( 2 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0.521138, 160.761, 30.7575, 30.7548 )
+
+[node name="Wall2" type="Sprite" parent="."]
+scale = Vector2( 0.773438, 0.697917 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 70.3901, 256.731, 119.448, 94.3125 )
+__meta__ = {
+"_edit_group_": true
+}
