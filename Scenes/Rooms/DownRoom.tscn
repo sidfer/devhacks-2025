@@ -102,7 +102,6 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Up"]
 position = Vector2( 497, 111 )
 rotation = 1.5708
-scale = Vector2( 1, 1 )
 shape = SubResource( 5 )
 
 [node name="Blueprints" type="Area2D" parent="."]

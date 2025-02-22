@@ -37,17 +37,16 @@ position = Vector2( 559, 190 )
 collision_layer = 4
 
 [node name="PlayerSpawn" type="Position2D" parent="."]
-visible = false
-position = Vector2( 526, 479 )
+position = Vector2( 519, 452 )
 
 [node name="Spawn_Up" type="Position2D" parent="."]
-position = Vector2( 518, 110 )
+position = Vector2( 521, 140 )
 
 [node name="Spawn_Down" type="Position2D" parent="."]
 position = Vector2( 521, 467 )
 
 [node name="Spawn_Left" type="Position2D" parent="."]
-position = Vector2( 903, 259 )
+position = Vector2( 883, 271 )
 
 [node name="Spawn_Right" type="Position2D" parent="."]
 position = Vector2( 152, 277 )
