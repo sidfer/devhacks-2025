@@ -14,7 +14,6 @@ func _ready():
 
 func _on_play_button_pressed():
 	# Hide the loading screen when the button is pressed
-	self.visible = false;
 	get_tree().change_scene("res://MainWorld.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

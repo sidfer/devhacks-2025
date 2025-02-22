@@ -16,23 +16,23 @@ func _ready():
 	loading_screen = preload("res://Scenes/LoadingScreen.tscn").instance()
 	
 	# Add the loading screen to the scene tree (it'll be on top of the game content)
-	add_child(loading_screen)
+	# add_child(loading_screen)
 	
 	# Setup the play button
-	play_button = loading_screen.get_node("PlayButton")
-	play_button.connect("pressed", self, "_on_play_button_pressed")
-	
+#	play_button = loading_screen.get_node("PlayButton")
+#	play_button.connect("pressed", self, "_on_play_button_pressed")
+#
 	# Optionally, set up other parts of the game manager (if needed)
 	# e.g., set initial room state, freeze player, etc.
 
-func _on_play_button_pressed():
-	# Hide the loading screen when the button is pressed
-	loading_screen.queue_free()
-	# Continue running the game logic (e.g., loading the first room)
-	print("Play button pressed. Starting the game.")
-	
-	# Load the starting room after the loading screen is hidden
-	load_room(Vector2(0, 0))
+#func _on_play_button_pressed():
+#	# Hide the loading screen when the button is pressed
+#	loading_screen.queue_free()
+#	# Continue running the game logic (e.g., loading the first room)
+#	print("Play button pressed. Starting the game.")
+#
+#	# Load the starting room after the loading screen is hidden
+#	load_room(Vector2(0, 0))
 	
 
 func load_room(grid_position: Vector2, from_direction: String=""):  
