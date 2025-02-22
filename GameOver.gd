@@ -5,4 +5,6 @@ func _ready():
 	restart_button.connect("pressed", self, "_on_restart_pressed")
 
 func _on_restart_pressed():
+	GameManager.reset()
+	Global.reset_timer()
 	get_tree().change_scene("res://MainWorld.tscn")  # Restart game

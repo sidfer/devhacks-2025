@@ -11,6 +11,12 @@ var rooms = {}  # Stores generated rooms
 #	# Load the starting room
 #	load_room(Vector2(0, 0))
 
+# In GameManager.gd
+func reset():
+	current_room = null
+	room_grid = Vector2(0, 0)
+	rooms = {}
+
 func _ready():
 	# Load the loading screen (make sure the loading screen scene is in your res:// folder)
 	loading_screen = preload("res://Scenes/LoadingScreen.tscn").instance()
@@ -45,8 +51,12 @@ func load_room(grid_position: Vector2, from_direction: String=""):
 	
 	# Remove the old room from RoomContainer  
 	if GameManager.current_room:  
-		print("Freeing old room: ", GameManager.current_room.name)
-		GameManager.current_room.queue_free()  
+		var room_name = GameManager.current_room.name  
+		print("Freeing old room: ", room_name)
+		GameManager.current_room.queue_free()
+		GameManager.current_room = null  # Clear the reference
+
+
 
 	# Load/generate the new room  
 	if not GameManager.rooms.has(grid_position):  
