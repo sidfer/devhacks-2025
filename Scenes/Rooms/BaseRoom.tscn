@@ -9,10 +9,10 @@
 [ext_resource path="res://scenes/Rooms/Door_Right.gd" type="Script" id=7]
 [ext_resource path="res://Global/Door_Down.gd" type="Script" id=8]
 [ext_resource path="res://scenes/Rooms/PocketWatch.gd" type="Script" id=9]
-[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://assests/Collectibles Images/galsses-removebg-preview.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 14.5, 15.5 )
+extents = Vector2( 25.5, 26.75 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 12.5, 14.5 )
@@ -133,14 +133,20 @@ script = ExtResource( 5 )
 position = Vector2( 92, 279 )
 shape = SubResource( 10 )
 
-[node name="PocketWatch" type="Area2D" parent="."]
-position = Vector2( 925, 127 )
+[node name="CrackedLens" type="Area2D" parent="."]
+position = Vector2( 497, 284 )
 script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PocketWatch"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrackedLens"]
+position = Vector2( 2.5, -11.25 )
 shape = SubResource( 6 )
 
-[node name="Sprite" type="Sprite" parent="PocketWatch"]
+[node name="Sprite" type="Sprite" parent="CrackedLens"]
+position = Vector2( 0, -7 )
+scale = Vector2( 0.128, 0.132 )
 texture = ExtResource( 10 )
 
 [connection signal="body_entered" from="Door_Up" to="." method="_on_Door_Up_body_entered"]
