@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/input-onlinepngtools.png-731afc17468c30826f4555b803d8a285.stex"
+path="res://.import/input-onlinepngtools.png-c04ae66b7fb41d3e701a2ddcc51a824e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Player/input-onlinepngtools.png"
-dest_files=[ "res://.import/input-onlinepngtools.png-731afc17468c30826f4555b803d8a285.stex" ]
+source_file="res://scenes/Player/input-onlinepngtools.png"
+dest_files=[ "res://.import/input-onlinepngtools.png-c04ae66b7fb41d3e701a2ddcc51a824e.stex" ]
 
 [params]
 

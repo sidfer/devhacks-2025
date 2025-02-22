@@ -4,4 +4,5 @@ onready var music_player = $AudioStreamPlayer2D  # Reference the AudioStreamPlay
 
 func _ready():
 	# Start playing the background music when the scene is ready
-	$AudioStreamPlayer2D.play();
+	pass
+#	$AudioStreamPlayer2D.play();
