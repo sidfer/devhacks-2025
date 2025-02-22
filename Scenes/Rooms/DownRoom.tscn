@@ -25,7 +25,7 @@ extents = Vector2( 13.5, 14 )
 extents = Vector2( 14.5, 12 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 39, 6 )
+extents = Vector2( 19.0734, 39.0229 )
 
 [node name="DownRoom" type="Node2D"]
 script = ExtResource( 4 )
@@ -35,7 +35,7 @@ position = Vector2( 528, 197 )
 collision_layer = 4
 
 [node name="Spawn_Up" type="Position2D" parent="."]
-position = Vector2( 507, 103 )
+position = Vector2( 503, 140 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -95,7 +95,9 @@ collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Up"]
-position = Vector2( 500, 99 )
+position = Vector2( 497, 111 )
+rotation = 1.5708
+scale = Vector2( 1, 1 )
 shape = SubResource( 5 )
 
 [connection signal="body_entered" from="Door_Up" to="." method="_on_Door_Up_body_entered"]
