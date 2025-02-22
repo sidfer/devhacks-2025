@@ -30,4 +30,15 @@ func add_time(seconds: int):
 func game_over():
 	print("Game Over!")  # Replace with your game-over logic
 	get_tree().change_scene("res://GameOver.tscn")  # Switch to game-over screen
+	
+func reset():
+	time_remaining = 10.0
+	emit_signal("time_updated", time_remaining)  # Notify UI of reset time
+	print("Time reset to: ", time_remaining)
+	
+	# Reset the timer
+	timer.stop()  # Stop the timer
+	timer.start()  # Restart the timer from the beginning;
+	
+	
 

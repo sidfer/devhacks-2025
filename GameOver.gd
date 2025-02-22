@@ -6,5 +6,5 @@ func _ready():
 
 func _on_restart_pressed():
 	GameManager.reset()
-	Global.reset_timer()
+	GlobalTimer.reset()
 	get_tree().change_scene("res://MainWorld.tscn")  # Restart game
