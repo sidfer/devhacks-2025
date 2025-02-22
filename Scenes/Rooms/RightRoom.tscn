@@ -5,7 +5,7 @@
 [ext_resource path="res://newWall.tres" type="TileSet" id=3]
 [ext_resource path="res://Global/BaseRoom.gd" type="Script" id=4]
 [ext_resource path="res://scenes/Rooms/Cracked Lens.gd" type="Script" id=5]
-[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://assests/Collectibles Images/pocket_watch-removebg-preview.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 30, 29 )
@@ -76,8 +76,11 @@ shape = SubResource( 5 )
 position = Vector2( 173, 289 )
 
 [node name="Cracked Lens" type="Area2D" parent="."]
-position = Vector2( 765, 117 )
+position = Vector2( 714, 136 )
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cracked Lens"]
 modulate = Color( 0.870588, 0.0627451, 0.0627451, 1 )
@@ -86,6 +89,8 @@ position = Vector2( 1, 0 )
 shape = SubResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="Cracked Lens"]
+position = Vector2( 0, -6.99994 )
+scale = Vector2( 0.118807, 0.120426 )
 texture = ExtResource( 6 )
 
 [connection signal="body_entered" from="Door_Left" to="." method="_on_Door_Left_body_entered"]
