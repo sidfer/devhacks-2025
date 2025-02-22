@@ -4,7 +4,6 @@
 [ext_resource path="res://Global/Door_Up.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Global/BaseRoom.gd" type="Script" id=4]
-[ext_resource path="res://Global/Door_Left.gd" type="Script" id=5]
 [ext_resource path="res://WallTileSet.tres" type="TileSet" id=6]
 
 [sub_resource type="TileSet" id=1]
@@ -65,39 +64,11 @@ position = Vector2( 464, 522 )
 shape = SubResource( 4 )
 
 [node name="Door_Up" type="Area2D" parent="."]
-position = Vector2( -2, -60 )
 collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Up"]
 position = Vector2( 517, 61.5 )
-shape = SubResource( 5 )
-
-[node name="Door_Right" type="Area2D" parent="."]
-position = Vector2( 78, 50 )
-collision_layer = 2
-script = ExtResource( 7 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Right"]
-position = Vector2( 930, 213 )
-shape = SubResource( 5 )
-
-[node name="Door_Left" type="Area2D" parent="."]
-position = Vector2( -864, 75 )
-collision_layer = 2
-script = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Left"]
-position = Vector2( 876, 191 )
-shape = SubResource( 5 )
-
-[node name="Door_Down" type="Area2D" parent="."]
-position = Vector2( -399, 380 )
-collision_layer = 2
-script = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Down"]
-position = Vector2( 930, 213 )
 shape = SubResource( 5 )
 
 [node name="Treasure" parent="." instance=ExtResource( 3 )]
@@ -109,13 +80,13 @@ visible = false
 position = Vector2( 526, 479 )
 
 [node name="Spawn_Up" type="Position2D" parent="."]
-position = Vector2( 516, 62 )
+position = Vector2( 525, 121 )
 
 [node name="Spawn_Down" type="Position2D" parent="."]
-position = Vector2( 531, 530 )
+position = Vector2( 535, 459 )
 
 [node name="Spawn_Left" type="Position2D" parent="."]
-position = Vector2( 916, 267 )
+visible = false
 
 [node name="Spawn_Right" type="Position2D" parent="."]
 visible = false
