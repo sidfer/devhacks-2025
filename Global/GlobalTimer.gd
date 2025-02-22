@@ -2,8 +2,9 @@ extends Node
 
 signal time_updated(time)  # Signal to notify when time changes
 
-var time_remaining = 10.0
+var time_remaining = 100.0
 var timer = null
+var started = false;
 
 func _ready():
 	if timer == null:  # Ensure only one timer exists
@@ -13,8 +14,11 @@ func _ready():
 		timer.autostart = true
 		timer.one_shot = false
 		timer.connect("timeout", self, "_on_Timer_timeout")
-		timer.start()
+			
 
+func start_timer():
+	timer.start();
+	
 func _on_Timer_timeout():
 	time_remaining -= 1
 	emit_signal("time_updated", time_remaining)  # Notify UI
@@ -29,3 +33,16 @@ func add_time(seconds: int):
 
 func game_over():
 	print("Game Over!")  # Replace with your game-over logic
+	get_tree().change_scene("res://GameOver.tscn")  # Switch to game-over screen
+	
+func reset():
+	time_remaining = 10.0
+	emit_signal("time_updated", time_remaining)  # Notify UI of reset time
+	print("Time reset to: ", time_remaining)
+	
+	# Reset the timer
+	timer.stop()  # Stop the timer
+	timer.start()  # Restart the timer from the beginning;
+	
+	
+

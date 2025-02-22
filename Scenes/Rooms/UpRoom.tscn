@@ -1,27 +1,49 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://WallTileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Rooms/Door_Down.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Rooms/Door_Down.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Global/BaseRoom.gd" type="Script" id=4]
+[ext_resource path="res://newWall.tres" type="TileSet" id=5]
+[ext_resource path="res://scenes/Rooms/Clockwork gear.gd" type="Script" id=6]
+[ext_resource path="res://assests/Collectibles Images/gear.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 28.625, 12 )
+extents = Vector2( 9.50001, 40.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 17, 14 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 14.5, 13 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 14.5, 11.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 17.25, 12.25 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 15.5, 12 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 17.25, 17.5 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 15, 11.75 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 14.5, 15.5 )
 
 [node name="UpRoom" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Treasure" parent="." instance=ExtResource( 3 )]
+[node name="Treasure2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 528, 197 )
 collision_layer = 4
 
-[node name="PlayerSpawn" type="Position2D" parent="."]
-position = Vector2( 526, 479 )
-
-[node name="Spawn_Down" type="Position2D" parent="."]
-position = Vector2( 515, 461 )
-
 [node name="Map1" type="TileMap" parent="."]
+z_index = -1
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 30, 30 )
 format = 1
@@ -29,10 +51,10 @@ tile_data = PoolIntArray( 131074, 536870933, 0, 131075, 536870933, 0, 131076, 53
 
 [node name="Map2" type="TileMap" parent="Map1"]
 scale = Vector2( 0.85, 0.85 )
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 30, 29 )
 format = 1
-tile_data = PoolIntArray( 0, -2147483648, 0, 3, 536870912, 0, 6, 536870912, 0, 9, 536870912, 0, 12, 536870912, 0, 15, 536870912, 0, 18, 536870912, 0, 21, 536870912, 0, 24, 536870912, 0, 27, 536870912, 0, 30, 536870912, 0, 33, 536870912, 0, 34, 536870912, 0, 37, -1610612736, 0, 131072, -2147483648, 0, 196608, -2147483648, 0, 196617, 536870914, 0, 196645, -536870912, 0, 393216, -2147483648, 0, 393253, -536870912, 0, 458752, -2147483648, 0, 524288, -2147483648, 0, 589824, -2147483648, 0, 589861, -536870912, 0, 655360, -2147483648, 0, 720896, -2147483648, 0, 786432, -2147483648, 0, 786469, -536870912, 0, 851968, -2147483648, 0, 917504, -2147483648, 0, 983040, -2147483648, 0, 983077, -536870912, 0, 1048576, -2147483648, 0, 1114112, -2147483648, 0, 1179648, -2147483648, 0, 1179685, -536870912, 0, 1245221, -536870912, 0, 1376256, -1073741824, 0, 1376259, 1073741824, 0, 1376260, 1073741824, 0, 1376263, 1073741824, 0, 1376266, 1073741824, 0, 1376269, 1073741824, 0, 1376272, 1073741824, 0, 1376275, 1073741824, 0, 1376278, 1073741824, 0, 1376281, 1073741824, 0, 1376284, 1073741824, 0, 1376287, 1073741824, 0, 1376290, 1073741824, 0, 1376293, -1610612736, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 196608, -1073741824, 0, 196645, -1610612736, 0, 262144, -1073741824, 0, 262181, -1610612736, 0, 327680, -1073741824, 0, 327717, -1610612736, 0, 393216, -1073741824, 0, 393253, -1610612736, 0, 458752, -1073741824, 0, 458789, -1610612736, 0, 524288, -1073741824, 0, 524325, -1610612736, 0, 589824, -1073741824, 0, 589861, -1610612736, 0, 655360, -1073741824, 0, 655397, -1610612736, 0, 720896, -1073741824, 0, 720933, -1610612736, 0, 786432, -1073741824, 0, 786469, -1610612736, 0, 851968, -1073741824, 0, 852005, -1610612736, 0, 917504, -1073741824, 0, 917541, -1610612736, 0, 983040, -1073741824, 0, 1048576, -1073741824, 0, 1048613, -1610612736, 0, 1114112, -1073741824, 0, 1114149, -1610612736, 0, 1179648, -1073741824, 0, 1179685, -1610612736, 0, 1245221, -1610612736, 0, 1310720, -1073741824, 0, 1310757, -1610612736, 0, 1376256, 1610612736, 0, 1376257, 1610612736, 0, 1376258, 1610612736, 0, 1376259, 1610612736, 0, 1376260, 1610612736, 0, 1376261, 1610612736, 0, 1376262, 1610612736, 0, 1376263, 1610612736, 0, 1376264, 1610612736, 0, 1376265, 1610612736, 0, 1376266, 1610612736, 0, 1376267, 1610612736, 0, 1376268, 1610612736, 0, 1376269, 1610612736, 0, 1376270, 1610612736, 0, 1376271, 1610612736, 0, 1376272, 1610612736, 0, 1376273, 1610612736, 0, 1376274, 1610612736, 0, 1376275, 1610612736, 0, 1376276, 1610612736, 0, 1376277, 1610612736, 0, 1376278, 1610612736, 0, 1376279, 1610612736, 0, 1376280, 1610612736, 0, 1376281, 1610612736, 0, 1376282, 1610612736, 0, 1376283, 1610612736, 0, 1376284, 1610612736, 0, 1376285, 1610612736, 0, 1376286, 1610612736, 0, 1376287, 1610612736, 0, 1376288, 1610612736, 0, 1376289, 1610612736, 0, 1376290, 1610612736, 0, 1376291, 1610612736, 0, 1376293, 1610612736, 0, 1376295, 1610612736, 0 )
 
 [node name="Map3" type="TileMap" parent="Map1"]
 tile_set = ExtResource( 1 )
@@ -55,15 +77,61 @@ format = 1
 tile_data = PoolIntArray( 65547, 1073741830, 0, 65548, 1610612742, 0 )
 
 [node name="Door_Down" type="Area2D" parent="Map1"]
-position = Vector2( -28, 12 )
+position = Vector2( -173, 245 )
 collision_layer = 2
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map1/Door_Down"]
-position = Vector2( 529.375, 513 )
+position = Vector2( 677, 256 )
+rotation = 1.5708
 shape = SubResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="Map1" groups=["slow_obstacles"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 194, 166 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 496.5, 105 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 404.5, 285.5 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 704.25, 195.75 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 194.5, 376 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 524, 433 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Map1/Area2D"]
+position = Vector2( 796, 436.75 )
+shape = SubResource( 12 )
+
+[node name="Spawn_Down" type="Position2D" parent="."]
+position = Vector2( 500, 455 )
+
+[node name="Clockwork gear" type="Area2D" parent="."]
+position = Vector2( 765, 117 )
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clockwork gear"]
+modulate = Color( 0.870588, 0.0627451, 0.0627451, 1 )
+self_modulate = Color( 0.886275, 0.0352941, 0.0352941, 1 )
+position = Vector2( 1, 0 )
+shape = SubResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="Clockwork gear"]
+position = Vector2( 2.125, -5.47641 )
+scale = Vector2( 0.1155, 0.102094 )
+texture = ExtResource( 7 )
 
 [connection signal="body_entered" from="Map1/Door_Down" to="Map1/Door_Down" method="_on_Door_Up_body_entered"]

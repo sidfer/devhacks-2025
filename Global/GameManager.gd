@@ -7,9 +7,36 @@ var current_room : Node
 var room_grid = Vector2(0, 0)  # Track player's grid position
 var rooms = {}  # Stores generated rooms
 
+var collected_items = {}  # Dictionary to track collected items
+var TOTAL_ITEMS = 5;
+
+func mark_item_collected(item_id):
+	collected_items[item_id] = true  # Mark this item as collected
+	check_win_condition()
+
+func is_item_collected(item_id):
+	return collected_items.get(item_id, false)  # Return true if collected
+
+func check_win_condition():
+	if collected_items.size() >= TOTAL_ITEMS:
+		win_game();
+
+func win_game():
+	print("Congratulations! You won!")
+	get_tree().change_scene("res://WonGame.tscn")
+	emit_signal("game_won")  # Notify UI or trigger a win screen
+
+
 #func _ready():
 #	# Load the starting room
 #	load_room(Vector2(0, 0))
+
+# In GameManager.gd
+func reset():
+	var time = get_tree().get_nodes_in_group("timer")
+	current_room = null
+	room_grid = Vector2(0, 0)
+	rooms = {}
 
 func _ready():
 	# Load the loading screen (make sure the loading screen scene is in your res:// folder)
@@ -30,9 +57,6 @@ func _ready():
 #	loading_screen.queue_free()
 #	# Continue running the game logic (e.g., loading the first room)
 #	print("Play button pressed. Starting the game.")
-#
-#	# Load the starting room after the loading screen is hidden
-#	load_room(Vector2(0, 0))
 	
 
 func load_room(grid_position: Vector2, from_direction: String=""):  
@@ -48,8 +72,12 @@ func load_room(grid_position: Vector2, from_direction: String=""):
 	
 	# Remove the old room from RoomContainer  
 	if GameManager.current_room:  
-		print("Freeing old room: ", GameManager.current_room.name)
-		GameManager.current_room.queue_free()  
+		var room_name = GameManager.current_room.name  
+		print("Freeing old room: ", room_name)
+		GameManager.current_room.queue_free()
+		GameManager.current_room = null  # Clear the reference
+
+
 
 	# Load/generate the new room  
 	if not GameManager.rooms.has(grid_position):  
