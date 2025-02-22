@@ -61,7 +61,7 @@ scale = Vector2( 0.773438, 0.697917 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 64, 256, 128, 96 )
+region_rect = Rect2( 70.3901, 256.731, 82.6329, 94.3125 )
 __meta__ = {
 "_edit_group_": true
 }
